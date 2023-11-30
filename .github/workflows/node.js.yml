@@ -22,9 +22,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: install package
-      run: /home/CICD/cicd_starter && npm i
-
     - name: install pm2
       run: /home/CICD/cicd_starter && npm install pm2 -g
 
@@ -33,6 +30,9 @@ jobs:
 
     - name: cd to directory
       run: /home/CICD/cicd_starter && git pull https://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@github.com/bearfixbug/cicd_starter.git
+
+    - name: install package
+      run: /home/CICD/cicd_starter && npm i
 
     - name: Restart PM2
       run: pm2 restart 2
